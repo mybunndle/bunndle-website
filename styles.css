@@ -1223,14 +1223,15 @@ img {
 }
 
 .chatbot-header {
-  background: var(--dark);
+  background: linear-gradient(135deg, #f5a623 0%, #e8820c 50%, #c0392b 100%);
   color: var(--white);
   padding: 20px;
   border-radius: 16px 16px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid var(--dark-2);
+  border-bottom: none;
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.35);
 }
 
 .chatbot-header h3 {
@@ -1267,7 +1268,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #f9f9f9;
+  background: linear-gradient(180deg, #fff8ee 0%, #fff3e0 100%);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
