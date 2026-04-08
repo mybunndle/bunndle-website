@@ -125,6 +125,26 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+/* ---- Policy Tabs ---- */
+(function () {
+  const tabs = document.querySelectorAll('.policy-tab');
+  const panels = document.querySelectorAll('.policy-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const tabName = tab.getAttribute('data-tab');
+
+      // Remove active class from all tabs and panels
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding panel
+      tab.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    });
+  });
+})();
+
 /* ---- EmailJS + Google Sheets Contact Form ---- */
 (function () {
 

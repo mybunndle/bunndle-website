@@ -799,6 +799,137 @@ img {
 }
 
 /* =============================================
+   PRIVACY & TERMS
+   ============================================= */
+#privacy-terms {
+  background: var(--dark);
+}
+
+#privacy-terms .section-title {
+  color: var(--white);
+  margin-bottom: 48px;
+}
+
+.policy-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.policy-tab {
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid rgba(245, 166, 35, 0.3);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all var(--transition);
+}
+
+.policy-tab:hover {
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.policy-tab.active {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: var(--primary);
+}
+
+.policy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 166, 35, 0.05);
+  border: 1px solid rgba(255, 166, 35, 0.15);
+  border-radius: 16px;
+  padding: 48px;
+  backdrop-filter: blur(10px);
+}
+
+.policy-panel {
+  display: none;
+  animation: fadeInPolicy 0.4s ease;
+}
+
+.policy-panel.active {
+  display: block;
+}
+
+@keyframes fadeInPolicy {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.policy-intro {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 166, 35, 0.2);
+  font-weight: 500;
+}
+
+.policy-section {
+  margin-bottom: 32px;
+}
+
+.policy-section h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.policy-section p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.policy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-list li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.policy-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.policy-list li strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* =============================================
    SOCIAL MEDIA
    ============================================= */
 #social {
@@ -931,6 +1062,7 @@ img {
   grid-template-columns: 1.8fr 1fr 1fr;
   gap: 48px;
   align-items: start;
+  grid-auto-flow: row;
 }
 
 /* Brand col */
@@ -1044,6 +1176,72 @@ img {
   transform: translateY(-2px);
 }
 
+/* =============================================
+   OFFICE LOCATIONS – Horizontal Row
+   ============================================= */
+.offices-col {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.offices-col h4 {
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+.offices-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2.5px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.offices-wrapper {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.office-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.office-addr {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
 /* Bottom bar */
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -1147,6 +1345,19 @@ img {
 
 /* Footer mobile — stack to single column */
 @media (max-width: 767px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 24px 32px;
+  }
+
+  .offices-col {
+    gap: 16px;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 1024px) {
   .footer-container {
     grid-template-columns: 1fr;
     padding: 48px 24px 32px;
